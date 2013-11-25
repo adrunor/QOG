@@ -5,6 +5,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.Sound;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -21,6 +22,8 @@ public class Menu extends BasicGameState {
 	private Image menu;
 	private Image cursor;
 	
+	private Sound moveCursor;
+	
 	private int pos;// 0 = jouer 1 = quitter
 	private int y;
 	
@@ -30,6 +33,7 @@ public class Menu extends BasicGameState {
 		// TODO Auto-generated method stub
 		menu = new Image("res/MainMenu/mm.png");
 		cursor = new Image("res/MainMenu/Cursor.png");
+		moveCursor = new Sound("res/sound/000.ogg");
 		pos = 0;
 		y = Y1;
 	}
@@ -49,10 +53,12 @@ public class Menu extends BasicGameState {
 		// TODO Auto-generated method stub		
 		Input input = gc.getInput();
 		if ((input.isKeyDown(Input.KEY_DOWN) || input.isKeyDown(Input.KEY_S)) && pos == 0) {
+			moveCursor.play();
 			y = Y2;
 			pos = 1;
 		}		
 		if ((input.isKeyDown(Input.KEY_UP) || input.isKeyDown(Input.KEY_Z)) && pos == 1) {
+			moveCursor.play();
 			y = Y1;
 			pos = 0;
 		}		
