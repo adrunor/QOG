@@ -8,8 +8,8 @@ import org.newdawn.slick.geom.Rectangle;
 
 public class Player {
 	
-	private Rectangle rect;
 	private Input input;
+	private Rectangle rect;
 	private int x;
 	private int y;
 	private float moveSpeed;
@@ -19,7 +19,7 @@ public class Player {
 	}
 	
 	public void init() throws SlickException {
-		rect = new Rectangle(x, y, 16, 10);
+		rect = new Rectangle(x, y, 14, 10);
 		moveSpeed = 0.15f;
 	}
 	

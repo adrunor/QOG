@@ -1,5 +1,6 @@
 package org.mikatico.base;
 
+import org.mikatico.map.Map;
 import org.mikatico.personnage.Player;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;

@@ -26,7 +26,8 @@ public class Game extends StateBasedGame {
 	           AppGameContainer container = new AppGameContainer(new Game("Quest Of The Grail"));  
 	           container.setDisplayMode(800, 600, false);  
 	           container.setTargetFrameRate(100);
-	           container.setShowFPS(false);
+	           container.setIcon("res/icon/IconQOG_16x16px.png");
+	           container.setShowFPS(true);
 	           container.setVSync(false);  
 	           container.start();  
 	}
