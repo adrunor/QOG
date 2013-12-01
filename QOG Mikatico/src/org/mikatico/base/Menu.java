@@ -10,7 +10,7 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
- * @author KAMI
+ * @author mikatico
  */
 public class Menu extends BasicGameState {
 	public static final int ID = 2;

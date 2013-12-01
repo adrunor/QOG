@@ -43,6 +43,8 @@ public class Player {
 	
 	public void render(GameContainer gc, Graphics g) 
 			throws SlickException {
+		g.drawString("x :"+x, 600, 20);
+		g.drawString("y :"+y, 600, 40);
 		g.draw(rect);
 	}
 }
