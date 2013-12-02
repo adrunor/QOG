@@ -1,5 +1,7 @@
 package org.mikatico.map;
 
+import java.util.List;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
@@ -9,7 +11,7 @@ import org.newdawn.slick.tiled.TiledMap;
 public class Map {
 	
 	private Rectangle rect;
-	private Rectangle[] block;
+	private List<Rectangle> listRect;
 	private TiledMap map;
 	private boolean[][] blocked;
 	private int tileID;
@@ -17,7 +19,6 @@ public class Map {
 	}
 	
 	public void init() throws SlickException {
-		block = new Rectangle[];
 		map = new TiledMap("res/Map/001.tmx");
 		blocked = new boolean[map.getWidth()][map.getHeight()];
 		for (int x = 0 ; x < map.getWidth() ; x++) {
@@ -25,8 +26,6 @@ public class Map {
 				tileID = map.getTileId(x, y, 3);
 				if (tileID > 0)  {
 					blocked[x][y] = true;
-					rect = new Rectangle(x, y, 8, 8);
-					
 	            }
 			}
 		}
@@ -37,7 +36,6 @@ public class Map {
 	}
 	
 	public void render(GameContainer gc, Graphics g) throws SlickException {
-		map.render(-400, -300, 0);
-
+		map.render(-400, -300);
 	}
 }
