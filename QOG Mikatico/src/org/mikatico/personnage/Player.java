@@ -19,8 +19,8 @@ public class Player {
 	}
 	
 	public void init() throws SlickException {
-		rect = new Rectangle(x, y, 14, 10);
-		moveSpeed = 0.20f;
+		rect = new Rectangle(x, y, 16, 8);
+		moveSpeed = 0.10f;
 	}
 	
 	public void update(GameContainer gc, int delta) 
@@ -43,8 +43,8 @@ public class Player {
 	
 	public void render(GameContainer gc, Graphics g) 
 			throws SlickException {
-		g.drawString("x :"+x, 600, 20);
-		g.drawString("y :"+y, 600, 40);
+		g.drawString("x :"+x, 220, 10);
+		g.drawString("y :"+y, 300, 10);
 		g.draw(rect);
 	}
 }

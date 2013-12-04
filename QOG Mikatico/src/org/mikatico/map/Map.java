@@ -1,11 +1,8 @@
 package org.mikatico.map;
 
-import java.util.List;
-
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
 /**
@@ -14,15 +11,16 @@ import org.newdawn.slick.tiled.TiledMap;
  *
  */
 public class Map {
-	private Rectangle rect;
 	private TiledMap map;
+	private int x;
+	private int y;
+	
 	private boolean[][] blocked;
 	private int tileID;
 	public Map() {
 	}
 	
 	public void init() throws SlickException {
-		rect = new Rectangle(800/2, 600/2, 16, 8);
 		map = new TiledMap("res/Map/001.tmx");
 		blocked = new boolean[map.getWidth()][map.getHeight()];
 		for (int x = 0 ; x < map.getWidth() ; x++) {
@@ -40,24 +38,20 @@ public class Map {
 	}
 	
 	public void renderDown(GameContainer gc, Graphics g) throws SlickException {
-		//map.render(0,0,0);
-		map.render(0,0,1);
-		map.render(0,0,2);
-		map.render(0,0,3);
-		map.render(0,0,4);
-		map.render(0,0,5);
-		map.render(0,0,6);
-		map.render(0,0,7);
-		map.render(0,0,8);
-		g.draw(rect);
-		
+//		map.render(0,0,0);
+		map.render(0,0,x,y,100,75,1, true);
+		map.render(0,0,x,y,100,75,2, false);
+		map.render(0,0,x,y,100,75,3, false);
+		map.render(0,0,x,y,100,75,4, false);
+		map.render(0,0,x,y,100,75,5, false);
+		map.render(0,0,x,y,100,75,6, false);
+		map.render(0,0,x,y,100,75,7, false);
+		map.render(0,0,x,y,100,75,8, false);	
 	}
 	public void renderUp(GameContainer gc, Graphics g) throws SlickException {
-		map.render(0,0,9);
-		map.render(0,0,10);
-		map.render(0,0,11);
-		map.render(0,0,12);
+		map.render(0,0,x,y,100,75,9, false);
+		map.render(0,0,x,y,100,75,10, false);
+		map.render(0,0,x,y,100,75,11, false);
+		map.render(0,0,x,y,100,75,12, false);
 	}
-	
-	
 }
