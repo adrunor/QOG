@@ -8,10 +8,13 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
+/**
+ * 
+ * @author mikatico
+ *
+ */
 public class Map {
-	
 	private Rectangle rect;
-	private List<Rectangle> listRect;
 	private TiledMap map;
 	private boolean[][] blocked;
 	private int tileID;
@@ -19,6 +22,7 @@ public class Map {
 	}
 	
 	public void init() throws SlickException {
+		rect = new Rectangle(800/2, 600/2, 16, 8);
 		map = new TiledMap("res/Map/001.tmx");
 		blocked = new boolean[map.getWidth()][map.getHeight()];
 		for (int x = 0 ; x < map.getWidth() ; x++) {
@@ -35,7 +39,25 @@ public class Map {
 
 	}
 	
-	public void render(GameContainer gc, Graphics g) throws SlickException {
-		map.render(-400, -300);
+	public void renderDown(GameContainer gc, Graphics g) throws SlickException {
+		//map.render(0,0,0);
+		map.render(0,0,1);
+		map.render(0,0,2);
+		map.render(0,0,3);
+		map.render(0,0,4);
+		map.render(0,0,5);
+		map.render(0,0,6);
+		map.render(0,0,7);
+		map.render(0,0,8);
+		g.draw(rect);
+		
 	}
+	public void renderUp(GameContainer gc, Graphics g) throws SlickException {
+		map.render(0,0,9);
+		map.render(0,0,10);
+		map.render(0,0,11);
+		map.render(0,0,12);
+	}
+	
+	
 }

@@ -33,8 +33,9 @@ public class GameState extends BasicGameState {
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		m.render(gc, g);
+		m.renderDown(gc, g);
 		p.render(gc, g);
+		m.renderUp(gc, g);
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class Player {
 	
 	public void init() throws SlickException {
 		rect = new Rectangle(x, y, 14, 10);
-		moveSpeed = 0.15f;
+		moveSpeed = 0.20f;
 	}
 	
 	public void update(GameContainer gc, int delta) 
